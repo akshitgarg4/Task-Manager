@@ -1,0 +1,280 @@
+body{
+	margin:0;
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+/*Variables*/
+:root{
+	--dark-bg:#f2f2f2;
+	--content-color:#404042;
+}
+
+/*Sections*/
+section{
+	background-color:var(--dark-bg);
+	width:100%;
+    height:auto;
+	display:flex;
+	flex-wrap: wrap;
+	flex-direction:row;
+	align-items:center;/*this is basically to bring everything in center when width of screen changes*/
+	overflow: hidden;/*so that when size decrease then anything which goes beyond section is not visible*/
+	min-width: 650px;
+}
+
+/*navbar*/
+.navigation-bar
+{
+	width:100%;
+	height:50px;
+	background-color: var(--content-color);
+}
+.text{
+	color:var(--dark-bg);
+}
+.right{
+	float:right;
+}
+.left{
+	float:left;
+}
+.icon{
+	padding-top:5px;
+	padding-left:15px;
+	color:var(--dark-bg);
+	padding-right:40px;
+}
+.buttons{
+	display: inline-block;
+	margin:12px;
+	float:right;
+	text-align: center;
+	background-color: transparent;
+	color:var(--dark-bg);
+	outline:none;
+	border:none;
+}
+.buttons:hover{
+	cursor:pointer;
+	transform: scale(1.3);
+	transition: 200ms ease-in-out;
+}
+a
+{
+	text-decoration: none;
+	color:white;
+}
+.icon:hover{
+	cursor:pointer;
+	transform: scale(1.1);
+	transition: 300ms ease-in-out;
+}
+
+
+
+/*footer or part4*/
+.footer-navbar{
+	width:100%;
+	height:35px;
+	background-color: var(--content-color);
+	text-align: center;
+	padding-bottom:20px;
+}
+.footer-navbar p:hover{
+	transform: scale(1.4);
+	transition: all 1s ease-in-out;
+}
+
+/*forms*/
+.formss{
+	margin:auto;
+	margin-top: 22px;
+	margin-bottom: 22px;
+	border:2px solid black;
+	width:60vw;
+	height:75vh;
+}
+.forms{
+	width:40%;
+	height:auto;
+	margin:auto;
+	margin-top:40px;
+	margin-bottom: 40px;
+	overflow:hidden;
+
+}
+.forms p{
+	text-align: center;
+}
+.input-box{
+	width:270px;
+	margin-bottom: 30px;
+	background-color: transparent;
+	border-bottom: 2px solid black;
+	position:relative;/*so that label can be kept on it*/
+}
+.input-box input{
+	background-color: transparent;
+	width:inherit;
+    font-size: 18px;
+    color:grey;
+	border: 0px solid transparent;
+	outline: none;/*to remove the input box*/
+}
+.input-box label{
+	position:absolute;/*because i want this to overlap with input box and start from where input box start and later move up on focus*/
+	left:6px;
+	top:4px;
+	font-size: 18px;
+	transition:0.5s;/*so that label smoothly goes from one state to another*/
+}
+
+.input-box input:focus ~ label,/* ~ operator basically select those labels preceded by input and are focussed*/
+.input-box input:valid ~ label
+{
+top: -18px;
+left: 0;
+color: var(--content-color);
+font-size: 12px;
+}
+
+.submit-form{
+    outline: none;
+    border:2px solid black;
+    padding: 10px;
+	background-color: transparent;
+	font-size:15px;
+	color:black;
+	margin-top: 5%;
+    margin-left: 30%;/*to place it in center*/
+    cursor: pointer;/*so that when cursor comes over button mouse pointer becomes a hand to signify a button*/
+}
+
+
+
+/*Section 3 Taking input of tasks and displaying tasks*/
+.task-block{
+	width:80%;
+	height:auto;
+	padding:auto;
+	margin-left: 10%;
+}
+.heading{
+	width:100%;
+	height:auto;
+	padding:auto;
+	border-bottom: 2px solid grey;
+}
+.heading p{
+	text-align: center;
+}
+.task-form input{
+	background-color: transparent;
+	width:90%;
+	height:30px;
+    font-size: 22px;
+    color:grey;
+	border: 0px solid transparent;
+	outline: none;/*to remove the input box*/
+
+}
+.task-form select{
+	background-color: transparent;
+	width:90%;
+	height:30px;
+    font-size: 22px;
+    color:grey;
+	border: 0px solid transparent;
+	outline: none;/*to remove the input box*/
+}
+.divide{
+	border-top: 2px solid lightgrey;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+}
+.divide>div{
+	width:50%;
+}
+.button
+{
+	border-top: 2px solid lightgrey;
+	padding-top:20px;
+	padding-bottom: 20px;
+	padding-left:44%;
+}
+.submit-button{
+	margin:auto;
+	width:80px;
+	height:50px;
+	font-size:18px;
+	color:black;
+	border:2px solid black;
+	cursor: pointer;
+}
+.listed-tasks{
+	width:100%;
+	min-height:200px;
+	max-height: 600px;
+	overflow-y: auto;
+	height:auto;
+}
+.divide-list{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width:100%;
+	height:100px;
+	justify-content: space-between;
+	
+}
+.list{
+	width:70%;
+	height:90px;
+	box-sizing:border-box;
+	padding-left:20px;
+	padding-top:10px;
+	line-height: 0.1rem;
+	display:inline-block;
+}
+.icons{
+	box-sizing:border-box;
+	width:25%;
+	height:90px;
+	padding:20px;
+	display:inline-block;
+}
+.list p{
+	display: inline-block;
+	margin-top:10px;
+	color:grey;
+}
+.categ{
+	display: inline-block;
+	background-color: #73c8ce;
+	width:60%;
+	height:50px;
+	padding:1px;
+	box-sizing:border-box;
+	overflow:hidden;
+}
+.categ p{
+	font-size:20px;
+	color:black;
+	text-align: center;
+}
+.delete{
+	width:25px;
+	height:35px;
+	box-sizing:border-box;
+	display: inline-block;
+	margin-bottom: 10px;
+
+}
+.delete a i{
+	text-align: center;
+	color:black;
+}
+
