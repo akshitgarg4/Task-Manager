@@ -1,0 +1,68 @@
+<body>
+    <section>
+		<div  class="task-block">
+			<div class="heading">
+				<p >ADD TASK</p>
+			</div>
+			<div>
+				<form action="/task-input" method="POST">
+					<input type="hidden" name="id" value="<%=user._id%>">
+				<div class="task-form">
+					<p>Description</p>
+					<input type="text" name="content" placeholder="Add Description about the task here..." required>
+					<p></p>
+				</div>
+				<div class="divide">
+					<div class="task-form">
+						<p>Category</p>
+						<select name="category" required>
+							<option disabled selected hidden>Choose a Category</option>
+							<option name="category" value="School">School</option>
+							<option name="category" value="College">College</option>
+							<option name="category" value="Home">Home</option>
+							<option name="category" value="Personal">Personal</option>
+							<option name="category" value="Office">Office</option>
+						</select>
+					</div>
+					<div class="task-form">
+						<P>Due Date</P>
+						<input type="date" name="date" required>
+					</div>
+				</div>
+				    <div class="task-form button">
+					<button class="submit-button" type="submit">
+					<p>&nbsp;<i class="fas fa-plus"></i>&nbsp;ADD</p>
+					</button>
+				</div>
+				</form>
+			</div>
+			<div class="heading">
+				<p >LISTED TASKS</p>
+			</div>
+			<% for(let i=0; i < tasks.tasks.length ; i++) {%>
+			<div class="listed-tasks">
+				<div class="divide-list">
+					<div class="list">
+						<p><%= tasks.tasks[i].content %></p><br>
+						<p><i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;<%= tasks.tasks[i].date %></p>
+					</div>
+					<div class="icons">
+						<div class="categ">
+							<p><%= tasks.tasks[i].category %></p>
+						</div>
+						<div class="delete">
+							<a href="/delete/<%= tasks.tasks[i]._id %>">
+								<i class="fas fa-trash"></i>
+							</a>
+						
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			<% } %>
+
+		</div>
+	</section>
+</body>
